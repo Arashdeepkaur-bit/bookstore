@@ -1,8 +1,9 @@
 const mongoose=require("mongoose");
 const bookschema=new mongoose.Schema({
+   
+    name:String,
     title:String,
-    name:StaticRange,
     author:String,
 
 });
-modules.exports=mongoose.model("Book",bookschema);
+module.exports=mongoose.model("Book",bookschema);
