@@ -21,7 +21,8 @@ if(!gettingbook){
 const updatebook=async(req,res)=>{
     try{
       const {title,name,author}=req.body;
-      const updatedbook=await book.findByIdAndUpdted(req.params.id,{title,name,author},{new:true});
+      
+      const updatedbook=await book.findByIdAndUpdate(req.params.id,{name,title,author},{new:true});
       if(!updatedbook){
         return res.status(404).json({message:"book not found"});
 
@@ -33,7 +34,7 @@ const updatebook=async(req,res)=>{
 }
 const deletebook=async(req,res)=>{
     try{
-        const deletebook=await book.findByAndDelete(req,params.id)
+        const deletebook=await book.findByIdAndDelete(req.params.id)
         if(!deletebook){
             res.status(404).json({message:" book not found"});
         }

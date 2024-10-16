@@ -7,6 +7,7 @@ const {createbook,getbook,updatebook, deletebook}=require("../controllers/bookco
 router.post("/",createbook);
 router.get("/:id",getbook);
 router.put("/:id",updatebook);
+router.patch("/:id",updatebook);
 router.delete("/:id",deletebook);
 
 
